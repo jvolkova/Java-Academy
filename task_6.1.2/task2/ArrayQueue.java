@@ -42,4 +42,8 @@ public class ArrayQueue implements Queue {
 		}
 		System.out.println();
 	}
+
+	public int size() {
+		return maxSize;
+	}
 }
