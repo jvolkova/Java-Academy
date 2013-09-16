@@ -10,7 +10,7 @@ public class QueueSum {
 			ArrayQueueSingleton.push((int)(Math.random() * 50));
        		}
 		int sum = 0;
-		for (int i = 0; i < ArrayQueueSingleton.MAX_SIZE; i++) {
+		for (int i = 0; !ArrayQueueSingleton.isEmpty(); i++) {
                 	sum = sum + ArrayQueueSingleton.pop();
                 }
 		System.out.println("Singleton sum is " + sum);
@@ -22,7 +22,7 @@ public class QueueSum {
                         ArrayQueueADT.push(queue, (int)(Math.random() * 30));
                 }
 		int sum = 0;
-		for (int i = 0; i < queue.maxSize; i++) {
+		for (int i = 0; !ArrayQueueADT.isEmpty(queue); i++) {
                         sum = sum + ArrayQueueADT.pop(queue);
                	}
 		System.out.println("ADT sum is " + sum);
@@ -34,7 +34,7 @@ public class QueueSum {
                         queue.push((int)(Math.random() * 20));
                 }
 		int sum = 0;
-                for (int i = 0; i < queue.maxSize; i++) {
+                for (int i = 0; !queue.isEmpty(); i++) {
                         sum = sum + queue.pop();
                 }
 		System.out.println("ArrayQueue sum is " + sum);

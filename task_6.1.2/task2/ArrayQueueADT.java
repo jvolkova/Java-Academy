@@ -1,6 +1,6 @@
 public class ArrayQueueADT {
 	
-	public int maxSize;
+	protected int maxSize;
 	private int start = -1;
         private int end = -1;
 	private Integer[] elements;
@@ -45,6 +45,13 @@ public class ArrayQueueADT {
         }
 
         public static int size(ArrayQueueADT queue) {
-                return queue.maxSize;
+                int length = 0;
+                if (queue.end >= queue.start) {
+                        length =  queue.end - queue.start;
+                }
+                else {
+                        length = queue.maxSize - queue.start + queue.end;
+                }
+                return length;
         }
 }

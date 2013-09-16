@@ -1,7 +1,7 @@
 public class ArrayQueue implements Queue {
 	private int start = -1;
 	private int end = -1;
-	public int maxSize;
+	protected int maxSize;
 	private Integer[] elements;
 
 	ArrayQueue(int size) {
@@ -44,6 +44,13 @@ public class ArrayQueue implements Queue {
 	}
 
 	public int size() {
-		return maxSize;
+		int length = 0;
+		if (end >= start) {
+			length =  end - start;
+		}
+		else {
+			length = maxSize - start + end;
+		}
+		return length;
 	}
 }

@@ -1,6 +1,6 @@
 public class ArrayQueueSingleton {
 	
-	public static final int MAX_SIZE = 10;
+	protected static final int MAX_SIZE = 10;
 	private static Integer[] elements = new Integer[MAX_SIZE];
         private static int start = -1;
         private static int end = -1;
@@ -41,7 +41,14 @@ public class ArrayQueueSingleton {
         }
 
         public static int size() {
-                return MAX_SIZE;
+                int length = 0;
+                if (end >= start) {
+                        length =  end - start;
+                }
+                else {
+                        length = MAX_SIZE - start + end;
+                }
+                return length;
         }
 
 }
